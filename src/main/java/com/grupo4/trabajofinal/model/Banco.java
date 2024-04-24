@@ -23,4 +23,7 @@ public class Banco {
     @JoinColumn(name = "idCiudad")
     private Ciudad ciudad;
 
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "idPais")
+    private Pais pais;
 }
