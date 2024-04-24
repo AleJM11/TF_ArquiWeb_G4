@@ -22,6 +22,9 @@ public class Usuario {
     private Date fechaRegistro = new Date();
     private String direccionUsuario;
     private String telefonoUsuario;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.ALL)
+    List<TarjetaDebito> tarjetas;
     //Referencias
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "idCiudad")
