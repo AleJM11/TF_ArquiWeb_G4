@@ -24,4 +24,6 @@ public class Pais {
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "pais")
     private List<Ciudad> ciudades;
 
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "pais")
+    private List<Banco> bancos;
 }
