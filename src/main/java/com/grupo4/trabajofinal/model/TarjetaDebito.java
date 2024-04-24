@@ -22,4 +22,13 @@ public class TarjetaDebito {
     private Date fechaVencimiento;
     private Integer cvv;
     private Integer claveDigital;
+
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "usuario_id")
+    Usuario usuario;
+
+    //Relacion a Banco, muchos a uno
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "banco_id")
+    Banco banco;
 }
